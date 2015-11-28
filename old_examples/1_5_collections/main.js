@@ -6,12 +6,14 @@ App.Contact = Backbone.Model.extend();
 
 // Create a Collection
 App.ContactCollection = Backbone.Collection.extend({
-  model: App.Contact
+  model: App.Contact,
+  comparator: "firstName"
 });
 
 // Create ItemView
 App.ContactItemView = Marionette.ItemView.extend({
   template: "#template",
+  tagName: 'li'
 });
 
 // Create CollectionView
