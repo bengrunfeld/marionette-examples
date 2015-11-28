@@ -7,7 +7,7 @@ App.Contact = Backbone.Model.extend();
 // Create a Collection
 App.ContactCollection = Backbone.Collection.extend({
   model: App.Contact,
-  comparator: "firstName"
+  // comparator: "firstName"
 });
 
 // Create ItemView
