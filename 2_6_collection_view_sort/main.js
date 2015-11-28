@@ -11,8 +11,8 @@ App.ContactItemView = Marionette.ItemView.extend({
     'click .destroy': 'destroyView'
   },
   destroyView: function(args){
-    this.trigger('removeView');
-    App.commands.execute("removeView", this.model);
+    // Remove a View from CollectionView by removing the model from the Collection
+    App.contacts.remove(this.model);
   }
 });
 
@@ -24,7 +24,8 @@ App.ContactCollection = Backbone.Collection.extend({
 // Create a CollectionView
 App.ContactsView = Marionette.CollectionView.extend({
   el: '.target',
-  childView: App.ContactItemView
+  childView: App.ContactItemView,
+  viewComparator: 'firstName'
 });
 
 // What should happen on Start
@@ -34,6 +35,7 @@ App.on("start", function(){
   App.clark = new App.Contact({firstName: 'Clark', lastName: 'Kent'});
   App.tony = new App.Contact({firstName: 'Tony', lastName: 'Stark'});
   App.lex = new App.Contact({firstName: 'Lex', lastName: 'Luthor'});
+  App.bruce = new App.Contact({firstName: 'Bruce', lastName: 'Wayne'});
 
   // Instatiate and populate the Collection
   App.contacts = new App.ContactCollection([App.clark, App.tony, App.lex]);
@@ -41,13 +43,11 @@ App.on("start", function(){
   // Define the collection your CollectionView is based on
   App.contactsView = new App.ContactsView({collection: App.contacts});
 
-  App.commands.setHandler("removeView", function(model){
-    var target = App.contactsView.children.findByModel(model);
-    App.contactsView.removeChildView(target);
-  });
-
   // Render the CollectionView
   App.contactsView.render();
+
+  // Dynamically add a childView with a model of bruce
+  App.contacts.add(App.bruce);
 });
 
 App.start();
