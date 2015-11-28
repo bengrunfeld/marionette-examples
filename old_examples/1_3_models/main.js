@@ -2,7 +2,7 @@
 var App = new Marionette.Application();
 
 // Create Model
-App.Contact = Backbone.Model.extend({});
+App.Contact = Backbone.Model.extend();
 
 // Create View
 App.ContactView = Marionette.ItemView.extend({
