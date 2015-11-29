@@ -16,14 +16,23 @@ App.FormView = Marionette.ItemView.extend({
   events: {
     'submit': 'handleSubmit'
   },
+  ui: {
+    type: 'input[name="type"]',
+    desc: 'input[name="desc"]',
+    img: 'input[name="img"]',
+  },
   handleSubmit: function(e){
     e.preventDefault();
     
     // Grab form data
     App.newCoffee = {};
-    App.newCoffee.type = $('input[name="type"]').val();
-    App.newCoffee.desc = $('input[name="desc"]').val();
-    App.newCoffee.img = $('input[name="img"]').val();
+    App.newCoffee.type = this.ui.type.val();
+    App.newCoffee.desc = this.ui.desc.val();
+    App.newCoffee.img = this.ui.img.val();
+
+    this.ui.type.val('');
+    this.ui.desc.val('');
+    this.ui.img.val('');
 
     // Create new Model
     App.coffees.add({type: App.newCoffee.type, description: App.newCoffee.desc, img: App.newCoffee.img})
