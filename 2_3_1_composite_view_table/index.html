@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../assets/style.css">
+  </head>
+  <body>
+
+    <div class="page-title">
+      <h1>Marionette CompositeView</h1>
+    </div>
+
+    <div class="target">
+    </div>
+
+    <script type="text/template" id="table-tpl">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Book Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- // Insert Rows here -->
+        </tbody>
+      </table>
+      <footer><p><%- title %></p></footer>
+    </script>
+
+    <script type="text/template" id="row-tpl">
+      <td><%- title %></td>
+    </script>    
+
+    <script src="../assets/jquery-1.11.3.min.js"></script>
+    <script src="../assets/underscore-min.js"></script>
+    <script src="../assets/backbone-min.js"></script>
+    <script src="../assets/backbone.marionette.min.js"></script>
+    <script src="main.js"></script>
+
+  </body>
+</html>
