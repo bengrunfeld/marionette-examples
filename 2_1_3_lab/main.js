@@ -1,4 +1,3 @@
-// Working with Models example
 var App = new Marionette.Application();
 
 // Create Model
@@ -38,9 +37,15 @@ App.on("start", function(){
     el: '.target',
   });
 
-  aliceView.render(); 
+  aliceView.render();
 
 });
 
 // Start
 App.start();
+
+
+
+
+
+

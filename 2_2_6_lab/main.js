@@ -1,4 +1,3 @@
-// Working with Collections example
 var App = new Marionette.Application();
 
 // Create Model
@@ -72,3 +71,7 @@ App.on("start", function(){
 });
 
 App.start();
+
+
+
+

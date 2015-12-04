@@ -1,15 +1,15 @@
-var ContactManager = new Marionette.Application();
+var App = new Marionette.Application();
 
-ContactManager.StaticView = Marionette.ItemView.extend({
+App.StaticView = Marionette.ItemView.extend({
   el: '.target',
   template: '#template'
 });
 
-ContactManager.on("start", function(){
-  var staticView = new ContactManager.StaticView({
+App.on("start", function(){
+  var staticView = new App.StaticView({
     template: '#template2'
   });
   staticView.render();
 });
 
-ContactManager.start();
+App.start();

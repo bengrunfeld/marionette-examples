@@ -1,4 +1,3 @@
-// Working with Collections example
 var App = new Marionette.Application();
 
 // Create Model
@@ -47,6 +46,12 @@ App.on("start", function(){
 
   // Dynamically add a childView with a model of bruce
   App.contacts.add(App.bruce);
+
+  App.contacts.reset([App.tony, App.bruce]);
+
 });
 
 App.start();
+
+
+
