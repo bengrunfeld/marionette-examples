@@ -1,4 +1,4 @@
-// Working with Collections example
+// Working with CollectionView example
 var App = new Marionette.Application();
 
 // Create Model
