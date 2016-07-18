@@ -1,4 +1,4 @@
-// Working with Collections example
+// Working with Comparator example
 var App = new Marionette.Application();
 
 // Create Model
